@@ -8,6 +8,7 @@
     <script src="js/config.js"></script>
     <script>
         function saveConfigForm() {
+            console.log(document.getElementById('staticDependenciesPath').value)
             const config = {
                 playCaptureSound: document.getElementById('playCaptureSound').checked,
                 wizzard: document.getElementById('wizzard').checked,
@@ -19,7 +20,8 @@
                 fontFamily: document.getElementById('fontFamily').value,
                 timeoutCaptura: document.getElementById('timeoutCaptura').value,
                 timeoutRequests: document.getElementById('timeoutRequests').value,
-                cameraTraseira: document.getElementById('cameraTraseira').checked
+                cameraTraseira: document.getElementById('cameraTraseira').checked,
+                staticDependenciesPath: document.getElementById('staticDependenciesPath').value
             };
 
             saveConfig(config);
@@ -47,6 +49,7 @@
             document.getElementById('fontFamily').value = config.fontFamily;
             document.getElementById('timeoutCaptura').value = config.timeoutCaptura;
             document.getElementById('timeoutRequests').value = config.timeoutRequests;
+            document.getElementById('staticDependenciesPath').value = config.staticDependenciesPath;
         }
 
         window.onload = function () {
@@ -90,6 +93,9 @@
 
         <label for="timeoutRequests">Timeout requests (ms):</label>
         <input type="number" id="timeoutRequests" name="timeoutRequests" value="999999"><br><br>
+
+        <label for="staticDependenciesPath">Caminho de import wasm:</label>
+        <input type="text" id="staticDependenciesPath" name="staticDependenciesPath" value=""><br><br>
 
         <input type="submit" value="Salvar Configurações">
         <input type="button" value="Limpar Configurações" class="button" id="clearButton" onclick="clearConfigForm()">
