@@ -21,7 +21,8 @@
                 timeoutCaptura: document.getElementById('timeoutCaptura').value,
                 timeoutRequests: document.getElementById('timeoutRequests').value,
                 cameraTraseira: document.getElementById('cameraTraseira').checked,
-                staticDependenciesPath: document.getElementById('staticDependenciesPath').value
+                staticDependenciesPath: document.getElementById('staticDependenciesPath').value,
+                proxyUrl: document.getElementById('proxyUrl').value
             };
 
             saveConfig(config);
@@ -50,6 +51,7 @@
             document.getElementById('timeoutCaptura').value = config.timeoutCaptura;
             document.getElementById('timeoutRequests').value = config.timeoutRequests;
             document.getElementById('staticDependenciesPath').value = config.staticDependenciesPath;
+            document.getElementById('proxyUrl').value = config.proxyUrl;
         }
 
         window.onload = function () {
@@ -87,6 +89,9 @@
 
         <label for="fontFamily">Fonte:</label>
         <input type="text" id="fontFamily" name="fontFamily" value="Roboto"><br><br>
+
+        <label for="proxyUrl">Proxy URL:</label>
+        <input type="text" id="proxyUrl" name="proxyUrl" value=""><br><br>
 
         <label for="timeoutCaptura">Timeout captura (ms):</label>
         <input type="number" id="timeoutCaptura" name="timeoutCaptura" value="999999"><br><br>
