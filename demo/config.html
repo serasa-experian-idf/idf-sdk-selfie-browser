@@ -22,7 +22,8 @@
                 timeoutRequests: document.getElementById('timeoutRequests').value,
                 cameraTraseira: document.getElementById('cameraTraseira').checked,
                 staticDependenciesPath: document.getElementById('staticDependenciesPath').value,
-                proxyUrl: document.getElementById('proxyUrl').value
+                proxyUrl: document.getElementById('proxyUrl').value,
+                maxTentativas: document.getElementById('maxTentativas').value
             };
 
             saveConfig(config);
@@ -52,6 +53,7 @@
             document.getElementById('timeoutRequests').value = config.timeoutRequests;
             document.getElementById('staticDependenciesPath').value = config.staticDependenciesPath;
             document.getElementById('proxyUrl').value = config.proxyUrl;
+            document.getElementById('maxTentativas').value = config.maxTentativas;
         }
 
         window.onload = function () {
@@ -98,6 +100,9 @@
 
         <label for="timeoutRequests">Timeout requests (ms):</label>
         <input type="number" id="timeoutRequests" name="timeoutRequests" value="999999"><br><br>
+
+        <label for="maxTentativas">Num max tentativas:</label>
+        <input type="number" id="maxTentativas" name="maxTentativas" value="999999"><br><br>
 
         <label for="staticDependenciesPath">Caminho de import wasm:</label>
         <input type="text" id="staticDependenciesPath" name="staticDependenciesPath" value=""><br><br>
