@@ -22,8 +22,10 @@
                 timeoutRequests: document.getElementById('timeoutRequests').value,
                 cameraTraseira: document.getElementById('cameraTraseira').checked,
                 staticDependenciesPath: document.getElementById('staticDependenciesPath').value,
+                modelJsonPath: document.getElementById('modelJsonPath').value,
                 proxyUrl: document.getElementById('proxyUrl').value,
-                maxTentativas: document.getElementById('maxTentativas').value
+                maxTentativas: document.getElementById('maxTentativas').value,
+                traceId: document.getElementById('traceId').value
             };
 
             saveConfig(config);
@@ -52,8 +54,10 @@
             document.getElementById('timeoutCaptura').value = config.timeoutCaptura;
             document.getElementById('timeoutRequests').value = config.timeoutRequests;
             document.getElementById('staticDependenciesPath').value = config.staticDependenciesPath;
+            document.getElementById('modelJsonPath').value = config.modelJsonPath;
             document.getElementById('proxyUrl').value = config.proxyUrl;
             document.getElementById('maxTentativas').value = config.maxTentativas;
+            document.getElementById('traceId').value = config.traceId;
         }
 
         window.onload = function () {
@@ -95,6 +99,9 @@
         <label for="proxyUrl">Proxy URL:</label>
         <input type="text" id="proxyUrl" name="proxyUrl" value=""><br><br>
 
+        <label for="traceId">Trace ID:</label>
+        <input type="text" id="traceId" name="traceId" value=""><br><br>
+
         <label for="timeoutCaptura">Timeout captura (ms):</label>
         <input type="number" id="timeoutCaptura" name="timeoutCaptura" value="999999"><br><br>
 
@@ -106,6 +113,9 @@
 
         <label for="staticDependenciesPath">Caminho de import wasm:</label>
         <input type="text" id="staticDependenciesPath" name="staticDependenciesPath" value=""><br><br>
+
+        <label for="modelJsonPath">Caminho do Model Json:</label>
+        <input type="text" id="modelJsonPath" name="modelJsonPath" value=""><br><br>
 
         <input type="submit" value="Salvar Configurações">
         <input type="button" value="Limpar Configurações" class="button" id="clearButton" onclick="clearConfigForm()">
